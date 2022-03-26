@@ -27,7 +27,7 @@ def test_series_transformation_return_sum_of_columns():
     (0.1, 0.0),
     (1, -1),
     (0.000000001, 7.0),
-    (np.nan, "nan"),
+    (np.nan, 0.0),
 ])
 def test_pytest_transformation_return_sum_of_columns(val1: float, val2: float):
     transformation = Transformation()
