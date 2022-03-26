@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import pytest
-from hypothesis import given, strategies as st
+from hypothesis import given, strategies as st, settings, Verbosity
 
 from transformation import Transformation
 
@@ -44,6 +44,7 @@ def test_pytest_transformation_return_sum_of_columns(val1: float, val2: float):
     pd.testing.assert_series_equal(df_calculated.result, expected_result, check_names=False)
 
 
+@settings(verbosity=Verbosity.verbose)
 @given(val1=st.floats(),
        val2=st.floats())
 def test_hypothesis_transformation_return_sum_of_columns(val1: float, val2: float):
